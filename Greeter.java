@@ -17,11 +17,15 @@ public class Greeter {
   }
 
   public static void main(String[] args) {
+	  try {
     String language = args[0];
     String country = args[1];
     String name = args[2];
-    String test = "Test";
     Greeter greeter = new Greeter(language, country, name);
     System.out.println(greeter.sayHello());
+	}
+	  catch (ArrayIndexOutOfBoundsException e) {
+		  System.err.print("Language, country and name needed.");
+	  }
   }
 }
